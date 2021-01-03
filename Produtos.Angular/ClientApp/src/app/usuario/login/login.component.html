@@ -3,41 +3,41 @@
     <img class="mb-4" src="/assets/grocery-shop-logo-300x275.png" alt="Grocery Shop" width="150">
     <h1 class="h3 mb-3 font-weight-normal login">Login do Cliente</h1>
 
-    <!--Usuario-->
-    <label for="inputUsuario" class="sr-only">Usuario</label>
-    <input type="text" id="inputUsuario" name="usuario"
+    <!--Username-->
+    <label for="inputUsername" class="sr-only">Usuario</label>
+    <input type="text" id="inputUsername" name="username"
            class="form-control mb-1"
            [ngClass]="{
-            'is-invalid':usuario.invalid && (usuario.dirty || usuario.touched),
-            'is-valid':usuario.valid && (usuario.dirty || usuario.touched)
+            'is-invalid':username.invalid && (username.dirty || username.touched),
+            'is-valid':username.valid && (username.dirty || username.touched)
            }"
-           placeholder="Informe o seu usario"
-           [(ngModel)]="usuario.usuario"
-           #usuario="ngModel"
-           usuario required />
+           placeholder="Informe o seu usuario"
+           [(ngModel)]="usuario.username"
+           #username="ngModel"
+           username required />
 
-    <div class="alert alert-danger" *ngIf="usuario.invalid && (usuario.dirty || usuario.touched)">
-      <div *ngIf="usuario.errors.required">
+    <div class="alert alert-danger" *ngIf="username.invalid && (username.dirty || username.touched)">
+      <div *ngIf="username.errors.required">
         Usuario é de preenchimento obrigatório
       </div>
       
     </div>
 
     <!--Senha-->
-    <label for="inputSenha" class="sr-only">Senha</label>
-    <input type="password" id="inputSenha" name="senha"
+    <label for="inputPassword" class="sr-only">Senha</label>
+    <input type="password" id="inputPassword" name="password"
            class="form-control"
            [ngClass]="{
-            'is-invalid':senha.invalid && (senha.dirty || senha.touched),
-            'is-valid':senha.valid && (senha.dirty || senha.touched)
+            'is-invalid':password.invalid && (password.dirty || password.touched),
+            'is-valid':password.valid && (password.dirty || password.touched)
            }"
            placeholder="Digite sua senha"
-           [(ngModel)]="usuario.senha"
-           #senha="ngModel"
+           [(ngModel)]="usuario.password"
+           #password="ngModel"
            required />
 
-    <div class="alert alert-danger" *ngIf="senha.invalid && (senha.dirty || senha.touched)">
-      <div *ngIf="senha.errors.required">
+    <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+      <div *ngIf="password.errors.required">
         Senha é de preenchimento obrigatório
       </div>
     </div>

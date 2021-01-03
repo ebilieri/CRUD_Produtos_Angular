@@ -1,4 +1,6 @@
 export class Usuario { 
-  usuario: string;
-  senha: string;
+  username: string;
+  password: string;
+  success: boolean;
+  error: string;
 }

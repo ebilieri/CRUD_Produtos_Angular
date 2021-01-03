@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../../modelo/usuario';
+//import { debug } from 'console';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +33,7 @@ export class UsuarioServico {
   }
 
   public usuarioAutenticado(): boolean {
-    return this._usuario != null && this._usuario.usuario != "" && this._usuario.senha != "";
+    return this._usuario != null && this._usuario.username != "" && this._usuario.password != "";
   }
 
   public limparSessao(): void {
@@ -41,9 +42,9 @@ export class UsuarioServico {
   }
 
   public verificarUsuario(usuario: Usuario): Observable<Usuario> {
-
+    //debugger;
     // url raiz + endereço do serviço a ser chamado ex.: https://www.groceryshop.com/
-    return this.http.post<Usuario>(this.baseURL + 'api/usuario/VerificarUsuario', JSON.stringify(usuario), { headers: this.headers });
+    return this.http.post<Usuario>(this.baseURL + 'api/usuario', JSON.stringify(usuario), { headers: this.headers });
   }
 
   /*
