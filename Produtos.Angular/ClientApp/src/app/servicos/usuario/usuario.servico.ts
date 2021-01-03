@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../../modelo/usuario';
 //import { debug } from 'console';
+//import { debug } from 'console';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +15,14 @@ export class UsuarioServico {
   private _usuario: Usuario;
 
   get usuario(): Usuario {
+    debugger;
     let usuario_json = sessionStorage.getItem("usuario-autenticado");
     this._usuario = JSON.parse(usuario_json);
     return this._usuario;
   }
 
   set usuario(usuario: Usuario) {
+    debugger;
     sessionStorage.setItem("usuario-autenticado", JSON.stringify(usuario));
     this._usuario = usuario;
   }
@@ -33,7 +36,8 @@ export class UsuarioServico {
   }
 
   public usuarioAutenticado(): boolean {
-    return this._usuario != null && this._usuario.username != "" && this._usuario.password != "";
+   
+    return this._usuario != null && this._usuario.success == true;
   }
 
   public limparSessao(): void {

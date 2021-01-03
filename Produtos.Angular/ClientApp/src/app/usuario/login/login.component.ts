@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Usuario } from '../../modelo/usuario';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UsuarioServico } from '../../servicos/usuario/usuario.servico';
-import { debug } from 'console';
+//import { debug } from 'console';
 
 @Component({
   selector: 'app-login',
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         data_json => {
           // execução com sucesso
           this.usuarioServico.usuario = data_json;
-          debugger;
+          //debugger;
           // redirecionar para home ou pagina acessada
           if (this.usuarioServico.usuario.success == true) {
             if (this.returnUrl == null) {
