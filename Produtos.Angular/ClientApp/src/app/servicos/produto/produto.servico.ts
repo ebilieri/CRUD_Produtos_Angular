@@ -26,14 +26,13 @@ export class ProdutoServico implements OnInit {
   }
 
   public cadastrar(produto: Produto): Observable<Produto> {
-
-    return this.http.post<Produto>(this.baseURL + 'api/produto', JSON.stringify(produto), { headers: this.headers });
+    debugger
+    if (produto.id > 0)
+      return this.http.put<Produto>(this.baseURL + `api/produto/${produto.id}`, JSON.stringify(produto), { headers: this.headers });
+    else
+      return this.http.post<Produto>(this.baseURL + 'api/produto', JSON.stringify(produto), { headers: this.headers });
   }
 
-  //public salvar(produto: Produto): Observable<Produto> {
-
-  //  return this.http.put<Produto>(this.baseURL + 'api/produto', JSON.stringify(produto), { headers: this.headers });
-  //}
 
   public deletar(produtoId: number): Observable<Produto[]> {
 

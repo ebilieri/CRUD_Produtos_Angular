@@ -2,8 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../../modelo/usuario';
-//import { debug } from 'console';
-//import { debug } from 'console';
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +21,7 @@ export class UsuarioServico {
   }
 
   set usuario(usuario: Usuario) {
-    debugger;
+    
     sessionStorage.setItem("usuario-autenticado", JSON.stringify(usuario));
     this._usuario = usuario;
   }
@@ -36,7 +35,7 @@ export class UsuarioServico {
   }
 
   public usuarioAutenticado(): boolean {
-    debugger
+    
     if (this._usuario == null) {
       let usuario_json = sessionStorage.getItem("usuario-autenticado");
       if (usuario_json != "")

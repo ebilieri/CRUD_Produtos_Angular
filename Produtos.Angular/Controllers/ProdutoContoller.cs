@@ -106,16 +106,36 @@ namespace GroceryShop.Angular.Controllers
                     return BadRequest(produto.ObterMensageValidacao());
                 }
 
-                if (produto.Id > 0)
+                _produtoRepositorio.Adicionar(produto);
+                return Created("api/produto", produto);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ObterListaErros(ex));
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="produto"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
+        public IActionResult Put([FromBody] Produto produto, int id)
+        {
+            try
+            {
+                produto.Validate();
+                if (!produto.EhValido)
                 {
-                    _produtoRepositorio.Atualizar(produto);
-                    return Ok(produto);
+                    return BadRequest(produto.ObterMensageValidacao());
                 }
-                else
-                {
-                    _produtoRepositorio.Adicionar(produto);
-                    return Created("api/produto", produto);
-                }
+
+                if (produto.Id != id) return BadRequest();
+
+                _produtoRepositorio.Atualizar(produto);
+                return Ok(produto);
             }
             catch (Exception ex)
             {

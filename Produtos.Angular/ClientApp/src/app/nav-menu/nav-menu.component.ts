@@ -40,9 +40,9 @@ export class NavMenuComponent implements OnInit {
   }
 
 
-  sair() {
+  sair() {    
     this.usuarioServico.limparSessao();
-    this.router.navigate(['/']);
+    this.router.navigate(['/entrar']);
   }
 
   
