@@ -2,9 +2,17 @@
 
 namespace QuickBuy.Angular.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     public class UsuarioController: ControllerBase
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post([FromBody]Usuario usuario)
         {
@@ -30,9 +38,18 @@ namespace QuickBuy.Angular.Controllers
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class Usuario
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public string Username { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public string Password { get; set; }
     }
 }

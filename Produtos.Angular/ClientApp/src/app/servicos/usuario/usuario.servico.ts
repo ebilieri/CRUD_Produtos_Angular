@@ -50,9 +50,10 @@ export class UsuarioServico {
   }
 
   public verificarUsuario(usuario: Usuario): Observable<Usuario> {
-    //debugger;
+   
     // url raiz + endereço do serviço a ser chamado ex.: https://www.groceryshop.com/
-    return this.http.post<Usuario>(this.baseURL + 'api/usuario', JSON.stringify(usuario), { headers: this.headers });
+    //return this.http.post<Usuario>(this.baseURL + 'api/usuario', JSON.stringify(usuario), { headers: this.headers });
+    return this.http.post<Usuario>('https://dev.sitemercado.com.br/api/login', JSON.stringify(usuario), { headers: this.headers });
   }
 
   /*
