@@ -28,17 +28,13 @@
             'is-valid':descricao.valid && (descricao.dirty || descricao.touched)
            }"
           [(ngModel)]="produto.descricao"
-          #descricao="ngModel"
-          minlength="100"
+          #descricao="ngModel"          
           required></textarea>
 
 <div class="invalid-feedback mb-2" *ngIf="descricao.invalid && (descricao.dirty || descricao.touched)">
   <div *ngIf="descricao.errors.required">
     Descrição é de preenchimento obrigatório
-  </div>
-  <div *ngIf="descricao.errors.minlength">
-    Descrição deve ter no mínimo 100 caracteres
-  </div>
+  </div>  
 </div>
 
 <!--Preco-->
@@ -52,6 +48,7 @@
            }"
        [(ngModel)]="produto.preco"
        #preco="ngModel"
+       min="0"
        required />
 
 <div class="invalid-feedback mb-2" *ngIf="preco.invalid && (preco.dirty || preco.touched)">

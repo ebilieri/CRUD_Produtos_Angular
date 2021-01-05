@@ -39,16 +39,14 @@ export class LoginComponent implements OnInit {
         data_json => {
           // execução com sucesso
           this.usuarioServico.usuario = data_json;
-          //debugger;
+          debugger;
           // redirecionar para home ou pagina acessada
-          if (this.usuarioServico.usuario.success == true) {
-            if (this.returnUrl == null) {
-              this.router.navigate(['/produto']);
-            } else {
-              this.router.navigate([this.returnUrl]);
-            }
+          if (this.usuarioServico.usuario.success == true) {            
+            
+              this.router.navigate(['/produto']);            
           }
           else {
+            this.ativar_spinner = false;
             this.mensagem = this.usuarioServico.usuario.error;
           }
           console.log(data_json);

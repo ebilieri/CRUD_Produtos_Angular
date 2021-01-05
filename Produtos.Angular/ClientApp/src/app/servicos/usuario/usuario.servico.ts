@@ -15,7 +15,7 @@ export class UsuarioServico {
   private _usuario: Usuario;
 
   get usuario(): Usuario {
-    debugger;
+   
     let usuario_json = sessionStorage.getItem("usuario-autenticado");
     this._usuario = JSON.parse(usuario_json);
     return this._usuario;
@@ -36,7 +36,12 @@ export class UsuarioServico {
   }
 
   public usuarioAutenticado(): boolean {
-   
+    debugger
+    if (this._usuario == null) {
+      let usuario_json = sessionStorage.getItem("usuario-autenticado");
+      if (usuario_json != "")
+        this._usuario = JSON.parse(usuario_json);
+    }
     return this._usuario != null && this._usuario.success == true;
   }
 
