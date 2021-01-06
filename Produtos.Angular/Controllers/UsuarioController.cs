@@ -16,7 +16,7 @@ namespace QuickBuy.Angular.Controllers
         [HttpPost]
         public IActionResult Post([FromBody]Usuario usuario)
         {
-            if(usuario.Username == "usuario" && usuario.Password == "senha")
+            if(usuario.Username == "11234567890" && usuario.Password == "09876543211")
             {
                 var result = new
                 {
