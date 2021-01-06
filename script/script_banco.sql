@@ -1,4 +1,13 @@
-﻿IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+﻿CREATE DATABASE [crud_produtos]
+GO
+
+USE crud_produtos
+GO
+
+CREATE DATABASE [crud_produtos1]
+GO
+
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
 BEGIN
     CREATE TABLE [__EFMigrationsHistory] (
         [MigrationId] nvarchar(150) NOT NULL,
