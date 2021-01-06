@@ -88,7 +88,7 @@ namespace GroceryShop.Angular
             services.AddDbContext<QuickBuyContexto>(option =>
                     option.UseLazyLoadingProxies()
                         .UseSqlServer(connectionString, m =>
-                            m.MigrationsAssembly("Produtos.Repositorio")));
+                            m.MigrationsAssembly("QuickBuy.Repositorio")));
 
             // Mapeamento Injeção de dependencia HttpContextAccessor
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
